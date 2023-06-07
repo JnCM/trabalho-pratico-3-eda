@@ -17,8 +17,19 @@ class Knapsack:
         self.__weights = weights
         self.__values = values
     
+    def BFKnapsack(self, i, j):
+        if i == 0 or j == 0:
+            return 0
+        
+        if j < self.__weights[i-1]:
+            value = self.BFKnapsack(i-1, j)
+        else:
+            value = max(self.BFKnapsack(i-1, j), self.BFKnapsack(i-1, j - self.__weights[i-1]) + self.__values[i-1])
+        return value
+
     def brute_force(self):
-        pass
+        value = self.BFKnapsack(self.__n, self.__W)
+        print(value)
 
     def generate_subsets(self) -> list[list[int]]:
         """

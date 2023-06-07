@@ -26,6 +26,9 @@ if __name__ == "__main__":
     W, n, weights, values = read_file(filename)
     knapsack = Knapsack(W, n, weights, values)
     
+    if opt == 1:
+        print("=================== Força-bruta ====================")
+        knapsack.brute_force()
     if opt == 2:
         print("================= Busca Exaustiva ==================")
         subset, value = knapsack.exaustive_search()
