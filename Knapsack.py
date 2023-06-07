@@ -35,15 +35,13 @@ class Knapsack:
         # com o conjunto vazio
         subsets = [[]]
         
-        i = 0
-        while i < self.__n:
+        for i in range(self.__n):
             temp_subsets = []
             for subset in subsets:
                 # Inclui no conjunto potência os subconjuntos já existentes,
                 # mas com o item da iteração
                 temp_subsets.append(subset + [i])
             subsets += temp_subsets
-            i += 1
         
         return subsets
 
@@ -56,12 +54,13 @@ class Knapsack:
 
         Retorno
         -------
-            - subset_winner (list[int]]): Subconjunto de itens selecionados.
+            - subset_winner (list[int]): Subconjunto de itens selecionados.
             - max_value (int): Valor total dos itens da mochila.
         """
 
         max_value = 0
         subset_winner = None
+        # Lista todas as possíveis soluções
         subsets = self.generate_subsets()
         
         for subset in subsets:
@@ -88,7 +87,7 @@ class Knapsack:
     def backtracking(self):
         pass
 
-    def search_itens_in_table(self):
+    def search_itens_in_table(self) -> list[int]:
         """
         Método que constrói o subconjuntos de itens selecionados para serem
         inseridos na mochila no paradigma de programação dinâmica. Percorre
@@ -97,7 +96,7 @@ class Knapsack:
 
         Retorno
         -------
-            - subset_winner (list[int]]): Subconjunto de itens selecionados.
+            - subset_winner (list[int]): Subconjunto de itens selecionados.
         """
 
         temp_w = self.__W
@@ -122,7 +121,7 @@ class Knapsack:
 
         Retorno
         -------
-            - subset_winner (list[int]]): Subconjunto de itens selecionados.
+            - subset_winner (list[int]): Subconjunto de itens selecionados.
             - max_value (int): Valor total dos itens da mochila.
         """
 
@@ -144,7 +143,7 @@ class Knapsack:
         
         return self.search_itens_in_table(), self.__F[self.__n][self.__W]
 
-    def MFKnapsack(self, i, j):
+    def MFKnapsack(self, i: int, j: int) -> int:
         """
         Método recursivo utilizado no paradigma de programação dinâmica
         (top-down). Resolve apenas os subproblemas necessários para atingir
@@ -186,7 +185,7 @@ class Knapsack:
 
         Retorno
         -------
-            - subset_winner (list[int]]): Subconjunto de itens selecionados.
+            - subset_winner (list[int]): Subconjunto de itens selecionados.
             - max_value (int): Valor total dos itens da mochila.
         """
 
@@ -211,7 +210,7 @@ class Knapsack:
 
         Retorno
         -------
-            - subset_winner (list[int]]): Subconjunto de itens selecionados.
+            - subset_winner (list[int]): Subconjunto de itens selecionados.
             - max_value (int): Valor total dos itens da mochila.
         """
 
