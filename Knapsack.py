@@ -87,7 +87,7 @@ class Knapsack:
     def backtracking(self):
         pass
 
-    def search_itens_in_table(self) -> list[int]:
+    def search_items_in_table(self) -> list[int]:
         """
         Método que constrói o subconjuntos de itens selecionados para serem
         inseridos na mochila no paradigma de programação dinâmica. Percorre
@@ -141,7 +141,7 @@ class Knapsack:
                     # mantém a mochila com os itens que já estão nela
                     self.__F[i][j] = self.__F[i-1][j]
         
-        return self.search_itens_in_table(), self.__F[self.__n][self.__W]
+        return self.search_items_in_table(), self.__F[self.__n][self.__W]
 
     def MFKnapsack(self, i: int, j: int) -> int:
         """
@@ -197,7 +197,7 @@ class Knapsack:
         # quantidade de itens e toda a capacidade da mochila
         max_value = self.MFKnapsack(self.__n, self.__W)
 
-        return self.search_itens_in_table(), max_value
+        return self.search_items_in_table(), max_value
 
     def greedy(self) -> tuple[list[int], int]:
         """
