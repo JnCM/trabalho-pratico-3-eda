@@ -28,11 +28,18 @@ if __name__ == "__main__":
     
     if opt == 1:
         print("=================== Força-bruta ====================")
-        knapsack.brute_force()
-    if opt == 2:
+        value = knapsack.brute_force()
+        # print("Item(ns) selecionado(s): {}".format(subset))
+        print("Valor total do(s) item(ns): {}".format(value))
+    elif opt == 2:
         print("================= Busca Exaustiva ==================")
         subset, value = knapsack.exaustive_search()
         print("Item(ns) selecionado(s): {}".format(subset))
+        print("Valor total do(s) item(ns): {}".format(value))
+    elif opt == 3:
+        print("================== Backtracking ====================")
+        value = knapsack.backtracking()
+        # print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
     elif opt == 4:
         print("========= Programação dinâmica - Bottom up =========")
