@@ -28,31 +28,37 @@ if __name__ == "__main__":
     
     if opt == 1:
         print("=================== Força-bruta ====================")
-        value = knapsack.brute_force()
+        value, count_ops = knapsack.brute_force()
         # print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
+        print("Total de operações básicas executadas: {}".format(count_ops))
     elif opt == 2:
         print("================= Busca Exaustiva ==================")
-        subset, value = knapsack.exaustive_search()
+        subset, value, count_ops = knapsack.exaustive_search()
         print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
+        print("Total de operações básicas executadas: {}".format(count_ops))
     elif opt == 3:
         print("================== Backtracking ====================")
-        value = knapsack.backtracking()
+        value, count_ops = knapsack.backtracking()
         # print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
+        print("Total de operações básicas executadas: {}".format(count_ops))
     elif opt == 4:
         print("========= Programação dinâmica - Bottom up =========")
-        subset, value = knapsack.dynamic_programming_bottom_up()
+        subset, value, count_ops = knapsack.dynamic_programming_bottom_up()
         print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
+        print("Total de operações básicas executadas: {}".format(count_ops))
     elif opt == 5:
         print("========= Programação dinâmica - Top down ==========")
-        subset, value = knapsack.dynamic_programming_top_down()
+        subset, value, count_ops = knapsack.dynamic_programming_top_down()
         print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
+        print("Total de operações básicas executadas: {}".format(count_ops))
     elif opt == 6:
         print("===================== Guloso =======================")
-        subset, value = knapsack.greedy()
+        subset, value, count_ops = knapsack.greedy()
         print("Item(ns) selecionado(s): {}".format(subset))
         print("Valor total do(s) item(ns): {}".format(value))
+        print("Total de operações básicas executadas: {}".format(count_ops))
